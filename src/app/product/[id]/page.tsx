@@ -40,8 +40,8 @@ const ProductDetailPage = () => {
   };
 
   return (
-    <div className="container-custom py-10">
-      <div className="flex flex-col lg:flex-row gap-12 mb-20">
+    <div className="container-custom py-16 lg:py-24">
+      <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 mb-32">
         
         {/* Left: Image Gallery */}
         <div className="flex-grow">

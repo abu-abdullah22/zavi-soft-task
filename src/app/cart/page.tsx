@@ -16,8 +16,8 @@ const CartPage = () => {
   const total = subtotal + delivery;
 
   return (
-    <div className="container-custom py-10 lg:py-20">
-      <div className="flex flex-col lg:flex-row gap-12">
+    <div className="container-custom py-16 lg:py-32">
+      <div className="flex flex-col lg:flex-row gap-16 lg:gap-24">
         
         {/* Left: Cart Items */}
         <div className="flex-grow">
