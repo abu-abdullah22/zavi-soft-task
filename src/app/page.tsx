@@ -69,24 +69,24 @@ export default function Home() {
       </section>
 
       {/* Categories Snippet */}
-      <section className="px-6 lg:px-20 py-20 bg-foreground text-white">
+      <section className="px-6 lg:px-20 py-32 bg-[#E7E7E3]">
         <div className="container-custom">
-            <div className="flex justify-between items-center mb-10">
-                <h2 className="text-4xl font-bold uppercase">Categories</h2>
+            <div className="flex justify-between items-center mb-16">
+                <h2 className="text-5xl font-bold uppercase">Categories</h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="relative aspect-[4/3] rounded-[40px] overflow-hidden group">
                     <Image src="https://images.unsplash.com/photo-1556906781-9a412961c28c?auto=format&fit=crop&q=80&w=687" alt="Lifestyle" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
                     <div className="absolute inset-x-8 bottom-8 flex justify-between items-end">
-                        <h3 className="text-2xl font-bold uppercase">Lifestyle <br /> Shoes</h3>
-                        <div className="bg-foreground p-3 rounded-lg"><MoveRight className="-rotate-45" /></div>
+                        <h3 className="text-3xl font-bold uppercase text-white">Lifestyle <br /> Shoes</h3>
+                        <div className="bg-foreground p-3 rounded-lg"><MoveRight className="-rotate-45 text-white" /></div>
                     </div>
                 </div>
                 <div className="relative aspect-[4/3] rounded-[40px] overflow-hidden group">
                     <Image src="https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&q=80&w=1070" alt="Basketball" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
                     <div className="absolute inset-x-8 bottom-8 flex justify-between items-end">
-                        <h3 className="text-2xl font-bold uppercase">Basketball <br /> Shoes</h3>
-                        <div className="bg-foreground p-3 rounded-lg"><MoveRight className="-rotate-45" /></div>
+                        <h3 className="text-3xl font-bold uppercase text-white">Basketball <br /> Shoes</h3>
+                        <div className="bg-foreground p-3 rounded-lg"><MoveRight className="-rotate-45 text-white" /></div>
                     </div>
                 </div>
             </div>

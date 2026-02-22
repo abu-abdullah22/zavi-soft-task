@@ -28,8 +28,8 @@ const Footer = () => {
         </div>
         
         {/* Background Decorative Logo */}
-        <div className="absolute right-[-5%] bottom-[-20%] opacity-10 select-none pointer-events-none">
-            <span className="text-[200px] font-black uppercase italic italic text-white leading-none">
+        <div className="absolute right-[-5%] bottom-[-20%] opacity-20 select-none pointer-events-none">
+            <span className="text-[200px] font-black uppercase italic italic text-[#E7E7E3] leading-none">
                 KICKS
             </span>
         </div>

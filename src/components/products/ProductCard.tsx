@@ -27,7 +27,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className="bg-white rounded-[28px] overflow-hidden group cursor-pointer border border-gray-100 p-2"
+      className="bg-gray-light rounded-[28px] overflow-hidden group cursor-pointer border border-transparent p-2 hover:border-primary/20 transition-all"
     >
       <Link href={`/product/${product.id}`}>
         <div className="relative aspect-square rounded-[24px] overflow-hidden bg-gray-light">
