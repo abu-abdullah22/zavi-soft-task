@@ -27,10 +27,10 @@ const ProductCard = ({ product }: ProductCardProps) => {
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className="bg-gray-light rounded-[28px] overflow-hidden group cursor-pointer border border-transparent p-2 hover:border-primary/20 transition-all"
+      className="bg-white rounded-2xl overflow-hidden group cursor-pointer"
     >
       <Link href={`/product/${product.id}`}>
-        <div className="relative aspect-square rounded-[24px] overflow-hidden bg-gray-light">
+        <div className="relative aspect-square overflow-hidden bg-[#F3F3F3] rounded-2xl">
            <Image
             src={imageUrl || "https://via.placeholder.com/400"}
             alt={product.title}
@@ -45,15 +45,13 @@ const ProductCard = ({ product }: ProductCardProps) => {
         </div>
 
         <div className="p-4">
-          <h3 className="text-xl font-bold mb-4 uppercase truncate leading-tight">
+          <h3 className="text-sm font-bold mb-1 uppercase truncate leading-tight text-foreground">
             {product.title}
           </h3>
           
-          <div className="flex items-center justify-between gap-2">
-            <button className="flex-grow bg-foreground text-white text-xs font-bold py-3 px-4 rounded-xl uppercase hover:bg-black transition-colors">
-               View Product - <span className="text-accent">${product.price}</span>
-            </button>
-          </div>
+          <button className="w-full bg-foreground text-white text-xs font-bold py-3 px-4 rounded-lg uppercase hover:bg-black transition-colors mt-3">
+             View Product - <span className="text-accent">${product.price}</span>
+          </button>
         </div>
       </Link>
     </motion.div>
