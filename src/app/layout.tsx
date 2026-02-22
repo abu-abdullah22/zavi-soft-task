@@ -19,6 +19,8 @@ export const metadata: Metadata = {
   description: "The biggest hyperstore in the universe for sneakers.",
 };
 
+import { StoreProvider } from "@/components/providers/StoreProvider";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -29,11 +31,13 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased font-sans`}
       >
-        <Navbar />
-        <main className="min-h-[60vh]">
-          {children}
-        </main>
-        <Footer />
+        <StoreProvider>
+          <Navbar />
+          <main className="min-h-[60vh]">
+            {children}
+          </main>
+          <Footer />
+        </StoreProvider>
       </body>
     </html>
   );
