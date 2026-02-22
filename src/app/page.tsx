@@ -35,7 +35,7 @@ export default function Home() {
               <p className="text-white/80 mb-8 text-lg">
                 Nike introducing the new air max for everyone's comfort
               </p>
-              <button className="bg-primary text-white px-8 py-4 rounded-xl font-bold uppercase hover:bg-blue-700 transition-colors">
+              <button className="bg-primary text-white w-[189px] h-[48px] rounded-[8px] font-bold uppercase hover:bg-blue-700 transition-colors flex items-center justify-center gap-1 px-8 py-2">
                 Shop Now
               </button>
            </div>
@@ -59,7 +59,7 @@ export default function Home() {
               <h2 className="text-5xl lg:text-[74px] font-semibold uppercase leading-[0.95] max-w-[589px] font-rubik text-foreground">
                 Don't miss out <br /><span className="text-primary italic">new drops</span>
               </h2>
-              <Link href="/shop" className="bg-primary text-white px-10 py-5 rounded-xl font-bold uppercase hover:bg-blue-700 transition-all flex items-center gap-2 self-start lg:self-auto">
+              <Link href="/shop" className="bg-primary text-white w-[189px] h-[48px] rounded-[8px] font-bold uppercase hover:bg-blue-700 transition-all flex items-center justify-center gap-1 self-start lg:self-auto px-8 py-2">
                 Shop All <MoveRight size={20} />
               </Link>
             </div>
