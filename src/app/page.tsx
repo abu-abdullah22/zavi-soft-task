@@ -9,7 +9,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative px-6 lg:px-20 pt-16 pb-32 container-custom">
         <div className="flex flex-col mb-12">
-             <h1 className="text-[120px] lg:text-[223.5px] font-bold uppercase italic tracking-tighter leading-[0.9] text-[#232321] select-none font-rubik">
+             <h1 className="text-[120px] lg:text-[223.5px] font-bold uppercase italic tracking-tighter leading-[1] text-[#232321] select-none font-rubik">
                 DO IT <span className="text-primary">RIGHT</span>
              </h1>
         </div>
@@ -53,17 +53,19 @@ export default function Home() {
       </section>
 
       {/* Featured Products Grid */}
-      <section className="px-6 lg:px-20 py-32 container-custom border-t border-gray-100">
-        <div className="flex flex-col lg:flex-row justify-between lg:items-end gap-8 mb-16">
-          <h2 className="text-5xl lg:text-7xl font-black uppercase leading-none">
-            Don't miss out <br /><span className="text-primary italic">new drops</span>
-          </h2>
-          <Link href="/shop" className="bg-primary text-white px-10 py-5 rounded-xl font-bold uppercase hover:bg-blue-700 transition-all flex items-center gap-2 self-start lg:self-auto">
-            Shop All <MoveRight size={20} />
-          </Link>
+      <section className="bg-foreground text-white py-32">
+        <div className="container-custom">
+            <div className="flex flex-col lg:flex-row justify-between lg:items-end gap-12 mb-20">
+              <h2 className="text-5xl lg:text-[74px] font-semibold uppercase leading-[0.95] max-w-[589px] font-rubik">
+                Don't miss out <br /><span className="text-primary italic">new drops</span>
+              </h2>
+              <Link href="/shop" className="bg-primary text-white px-10 py-5 rounded-xl font-bold uppercase hover:bg-blue-700 transition-all flex items-center gap-2 self-start lg:self-auto">
+                Shop All <MoveRight size={20} />
+              </Link>
+            </div>
+            
+            <ProductGrid />
         </div>
-        
-        <ProductGrid />
       </section>
 
       {/* Categories Snippet */}
