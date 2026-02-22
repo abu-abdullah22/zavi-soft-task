@@ -53,10 +53,10 @@ export default function Home() {
       </section>
 
       {/* Featured Products Grid */}
-      <section className="bg-gray-light text-foreground py-32">
+      <section className="py-32">
         <div className="container-custom">
             <div className="flex flex-col lg:flex-row justify-between lg:items-end gap-12 mb-20">
-              <h2 className="text-5xl lg:text-[74px] font-semibold uppercase leading-[0.95] max-w-[589px] font-rubik">
+              <h2 className="text-5xl lg:text-[74px] font-semibold uppercase leading-[0.95] max-w-[589px] font-rubik text-foreground">
                 Don't miss out <br /><span className="text-primary italic">new drops</span>
               </h2>
               <Link href="/shop" className="bg-primary text-white px-10 py-5 rounded-xl font-bold uppercase hover:bg-blue-700 transition-all flex items-center gap-2 self-start lg:self-auto">

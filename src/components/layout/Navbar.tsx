@@ -1,9 +1,9 @@
 "use client";
 
-import React, { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { Menu, Search, User, X } from "lucide-react";
 import Link from "next/link";
-import { Search, User, Menu, X, ShoppingCart } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,7 +15,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="bg-white border-b border-gray-100 sticky top-0 z-50">
+    <nav className="bg-background border-b border-gray-200/50 sticky top-0 z-50 backdrop-blur-md">
       <div className="container-custom">
         <div className="flex h-20 items-center justify-between">
           
