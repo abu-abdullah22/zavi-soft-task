@@ -5,10 +5,10 @@ const Footer = () => {
   return (
     <footer className="mt-12">
       {/* Join Club Section */}
-      <div className="bg-primary py-12 px-8 lg:px-16 rounded-[40px] container-custom mb-0 overflow-hidden relative">
-        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8 relative z-10">
+      <div className="bg-primary px-8 lg:px-16 rounded-[40px] max-w-[1320px] mx-auto h-auto lg:h-[340px] flex items-center mb-0 overflow-hidden relative">
+        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8 relative z-10 w-full">
           {/* Left: Text + Form */}
-          <div className="max-w-2xl">
+          <div className="max-w-2xl flex-1">
             <h2 className="text-3xl lg:text-5xl font-black text-white leading-tight mb-4 uppercase">
               Join our KicksPlus Club & get 15% off
             </h2>
