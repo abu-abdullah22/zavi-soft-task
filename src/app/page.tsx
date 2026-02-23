@@ -124,24 +124,24 @@ export default function Home() {
                 </Link>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr">
                 {[
                   { id: 1, avatar: "/reviewer-1.png", img: "/review-image-1.png" },
                   { id: 2, avatar: "/reviewer-2.png", img: "/review-image-2.png" },
                   { id: 3, avatar: "/reviewer-3.png", img: "/review-image-3.png" }
                 ].map((review) => (
-                  <div key={review.id} className="flex flex-col rounded-[28px] overflow-hidden bg-white group border border-transparent shadow-sm">
+                  <div key={review.id} className="flex flex-col rounded-[28px] overflow-hidden bg-white group h-full transition-transform hover:translate-y-[-4px]">
                     {/* Top Content */}
-                    <div className="p-8 pb-6 flex flex-col min-h-[180px]">
+                    <div className="p-8 pb-8 flex flex-col flex-1">
                       <div className="flex justify-between items-start gap-4 mb-4">
                         <div className="flex flex-col">
                           <h4 className="text-2xl font-bold text-foreground mb-1 leading-tight tracking-tight">Good Quality</h4>
-                          <p className="text-gray-500 text-base leading-snug max-w-[200px]">
+                          <p className="text-gray-500 text-base leading-snug">
                             I highly recommend shopping from kicks
                           </p>
                         </div>
                         
-                        <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-white flex-shrink-0 shadow-sm">
+                        <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-white flex-shrink-0 shadow-md">
                           <Image 
                             src={review.avatar} 
                             alt="Reviewer" 
@@ -152,10 +152,10 @@ export default function Home() {
                         </div>
                       </div>
 
-                      <div className="flex items-center gap-1 mt-auto">
+                      <div className="flex items-center gap-1 mt-auto pb-2">
                         <div className="flex gap-0.5">
                           {[...Array(5)].map((_, i) => (
-                            <Star key={i} size={18} className="fill-accent text-accent" />
+                            <Star key={i} size={18} className="fill-[#FFA52F] text-[#FFA52F]" />
                           ))}
                         </div>
                         <span className="text-base font-bold text-foreground ml-1">5.0</span>
@@ -163,7 +163,7 @@ export default function Home() {
                     </div>
 
                     {/* Bottom Image */}
-                    <div className="relative aspect-[429/325] w-full">
+                    <div className="relative aspect-[400/300] w-full overflow-hidden">
                       <Image 
                         src={review.img} 
                         alt="Review Image" 

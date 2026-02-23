@@ -45,31 +45,37 @@ const ProductCard = ({ product }: ProductCardProps) => {
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className="bg-white rounded-2xl overflow-hidden group cursor-pointer"
+      className="group cursor-pointer flex flex-col h-full"
     >
-      <Link href={`/product/${product.id}`}>
-        <div className="relative aspect-square overflow-hidden bg-[#F3F3F3] rounded-2xl">
-           <Image
+      <Link href={`/product/${product.id}`} className="flex flex-col h-full">
+        {/* Image Container: #ECEEF0 bg, 28px rounding, thick white border */}
+        <div className="relative aspect-[318/350] w-full bg-[#ECEEF0] rounded-[28px] overflow-hidden border-[5px] border-white">
+          <Image
             src={imageUrl || "https://via.placeholder.com/400"}
             alt={product.title}
             fill
-            className="object-cover group-hover:scale-105 transition-transform duration-500"
+            className="object-contain p-6 group-hover:scale-105 transition-transform duration-500"
+            priority
           />
-          <div className="absolute top-4 left-4">
-            <span className="bg-primary text-white text-[10px] font-bold px-3 py-1.5 rounded-bl-xl rounded-tr-xl uppercase">
+          {/* "New" Badge */}
+          <div className="absolute top-0 left-0">
+            <div className="bg-[#4A69E2] text-white text-[12px] font-bold px-4 py-2 rounded-br-[20px] rounded-tl-[28px] uppercase tracking-wide">
               New
-            </span>
+            </div>
           </div>
         </div>
 
-        <div className="p-4">
-          <h3 className="text-sm font-bold mb-1 uppercase truncate leading-tight text-foreground">
+        {/* Text + Button Area — sits on section background */}
+        <div className="mt-[10px] flex flex-col flex-1 gap-[10px]">
+          <h3 className="text-[20px] lg:text-[22px] font-bold uppercase leading-[1.15] text-[#232321] font-rubik line-clamp-2">
             {product.title}
           </h3>
           
-          <button className="w-full bg-foreground text-white text-xs font-bold py-3 px-4 rounded-lg uppercase hover:bg-black transition-colors mt-3">
-             View Product - <span className="text-accent">${product.price}</span>
-          </button>
+          <div className="mt-auto">
+            <button className="w-full h-[52px] bg-[#232321] text-white text-[12px] font-bold rounded-[8px] uppercase hover:bg-black transition-colors flex items-center justify-center gap-1 tracking-wide">
+               VIEW PRODUCT - <span className="text-[#FFA52F]">${product.price}</span>
+            </button>
+          </div>
         </div>
       </Link>
     </motion.div>

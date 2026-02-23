@@ -9,8 +9,8 @@ const ProductGrid = () => {
   if (isLoading) {
     return (
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {[...Array(8)].map((_, i) => (
-          <div key={i} className="aspect-[4/5] bg-gray-100 animate-pulse rounded-[28px]" />
+        {[...Array(4)].map((_, i) => (
+          <div key={i} className="h-[350px] bg-gray-100 animate-pulse rounded-[28px]" />
         ))}
       </div>
     );
@@ -25,11 +25,11 @@ const ProductGrid = () => {
     );
   }
 
-  // Limit for landing page
-  const displayProducts = products.slice(0, 8);
+  // Show exactly four products on the landing page as requested
+  const displayProducts = products.slice(0, 4);
 
   return (
-    <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
       {displayProducts.map((product) => (
         <ProductCard key={product.id} product={product} />
       ))}
