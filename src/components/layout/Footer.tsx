@@ -1,4 +1,5 @@
 import { Facebook, Instagram, Github as Tiktok, Twitter } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 const Footer = () => {
@@ -89,20 +90,21 @@ const Footer = () => {
 
         </div>
 
-        {/* Large KICKS Bottom Text */}
-        <div className="container-custom px-0 mb-8 select-none">
-             <span className="text-[120px] md:text-[240px] lg:text-[400px] font-black uppercase italic leading-none text-white block w-full text-center tracking-tighter opacity-100">
-                 KICKS
-             </span>
+        {/* Large KICKS Bottom Logo */}
+        <div className="absolute top-[383px] left-[29px] w-[1262px] h-[313.6px] select-none pointer-events-none">
+             <Image 
+                src="/Logo.png" 
+                alt="KICKS" 
+                width={1262} 
+                height={314} 
+                className="w-full h-full object-contain"
+             />
         </div>
-        
-        <div className="container-custom pt-8 border-t border-white/10 flex justify-between items-center text-gray-500 text-sm">
-             <p>© All rights reserved</p>
-             <div className="flex gap-6">
-                <span>Terms of Service</span>
-                <span>Privacy Policy</span>
-             </div>
-        </div>
+      </div>
+      
+      {/* Copyright outside footer */}
+      <div className="container-custom pt-8 pb-12 flex justify-center text-gray-500 text-sm">
+           <p>© All rights reserved</p>
       </div>
     </footer>
   );
