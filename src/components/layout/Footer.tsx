@@ -5,53 +5,58 @@ const Footer = () => {
   return (
     <footer className="mt-12">
       {/* Join Club Section */}
-      <div className="bg-primary py-12 px-8 lg:px-16 rounded-[32px] container-custom mb-0 overflow-hidden relative">
-        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8">
+      <div className="bg-primary py-12 px-8 lg:px-16 rounded-[40px] container-custom mb-0 overflow-hidden relative">
+        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8 relative z-10">
           {/* Left: Text + Form */}
-          <div className="max-w-lg z-10">
-            <h2 className="text-3xl lg:text-[40px] font-black text-white leading-tight mb-3 uppercase">
+          <div className="max-w-2xl">
+            <h2 className="text-3xl lg:text-5xl font-black text-white leading-tight mb-4 uppercase">
               Join our KicksPlus Club & get 15% off
             </h2>
-            <p className="text-white/70 text-sm mb-6">
+            <p className="text-white/80 text-lg mb-8">
               Sign up for free! Join the community.
             </p>
-            <div className="flex gap-3">
+            <div className="flex flex-col sm:flex-row gap-4">
               <input 
                 type="email" 
                 placeholder="Email address" 
-                className="px-5 py-3 bg-transparent border border-white/30 rounded-lg text-white placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-accent w-64 text-sm"
+                className="px-6 py-4 bg-transparent border border-white/20 rounded-xl text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-accent w-full sm:w-80 text-base"
               />
-              <button className="bg-foreground text-white px-6 py-3 rounded-lg font-bold uppercase text-xs hover:bg-black transition-colors tracking-wide">
+              <button className="bg-black text-white px-8 py-4 rounded-xl font-bold uppercase text-sm hover:bg-gray-900 transition-colors">
                 Submit
               </button>
             </div>
           </div>
 
           {/* Right: Large KICKS Logo */}
-          <div className="hidden lg:block z-10">
-            <span className="text-[100px] font-black uppercase italic text-white leading-none relative">
-              KICKS<span className="text-accent text-2xl absolute -top-1 -right-4">+</span>
-            </span>
+          <div className="hidden lg:block">
+            <div className="relative">
+              <span className="text-[120px] font-black uppercase italic text-white leading-none">
+                KICKS
+              </span>
+              <div className="absolute top-2 -right-4 w-8 h-8 bg-accent rounded-full flex items-center justify-center border-4 border-primary">
+                <span className="text-primary font-black text-xl leading-none">+</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
       {/* Main Footer Content */}
-      <div className="bg-foreground text-white pt-16 pb-8 px-8 lg:px-16 rounded-t-[32px] -mt-6 relative z-0">
-        <div className="container-custom grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-16 pt-4">
+      <div className="bg-[#232321] text-white pt-24 pb-8 px-8 lg:px-16 rounded-[40px] -mt-8 relative z-0">
+        <div className="container-custom grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-24">
           
           {/* About Us */}
           <div>
-            <h3 className="text-accent text-base font-bold mb-5">About us</h3>
-            <p className="text-gray-400 leading-relaxed text-sm">
+            <h3 className="text-accent text-xl font-bold mb-8">About us</h3>
+            <p className="text-gray-400 leading-relaxed text-base">
               We are the biggest hyperstore in the universe. We got you all cover with our exclusive collections and latest drops.
             </p>
           </div>
 
           {/* Categories */}
           <div>
-            <h3 className="text-accent text-base font-bold mb-5">Categories</h3>
-            <ul className="space-y-3 text-white text-sm font-medium">
+            <h3 className="text-accent text-xl font-bold mb-8">Categories</h3>
+            <ul className="space-y-4 text-white text-base font-semibold">
               <li><Link href="/runners" className="hover:text-accent transition-colors">Runners</Link></li>
               <li><Link href="/sneakers" className="hover:text-accent transition-colors">Sneakers</Link></li>
               <li><Link href="/basketball" className="hover:text-accent transition-colors">Basketball</Link></li>
@@ -63,8 +68,8 @@ const Footer = () => {
 
           {/* Company */}
           <div>
-            <h3 className="text-accent text-base font-bold mb-5">Company</h3>
-            <ul className="space-y-3 text-white text-sm font-medium">
+            <h3 className="text-accent text-xl font-bold mb-8">Company</h3>
+            <ul className="space-y-4 text-white text-base font-semibold">
               <li><Link href="/about" className="hover:text-accent transition-colors">About</Link></li>
               <li><Link href="/contact" className="hover:text-accent transition-colors">Contact</Link></li>
               <li><Link href="/blogs" className="hover:text-accent transition-colors">Blogs</Link></li>
@@ -73,26 +78,30 @@ const Footer = () => {
 
           {/* Follow Us */}
           <div>
-            <h3 className="text-accent text-base font-bold mb-5">Follow us</h3>
+            <h3 className="text-accent text-xl font-bold mb-8">Follow us</h3>
             <div className="flex gap-4">
-              <Link href="#" className="hover:text-accent transition-colors"><Facebook size={20} /></Link>
-              <Link href="#" className="hover:text-accent transition-colors"><Instagram size={20} /></Link>
-              <Link href="#" className="hover:text-accent transition-colors"><Twitter size={20} /></Link>
-              <Link href="#" className="hover:text-accent transition-colors"><Tiktok size={20} /></Link>
+              <Link href="#" className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-black hover:bg-accent transition-colors"><Facebook size={20} fill="currentColor" /></Link>
+              <Link href="#" className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-black hover:bg-accent transition-colors"><Instagram size={20} /></Link>
+              <Link href="#" className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-black hover:bg-accent transition-colors"><Twitter size={20} fill="currentColor" /></Link>
+              <Link href="#" className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-black hover:bg-accent transition-colors"><Tiktok size={20} fill="currentColor" /></Link>
             </div>
           </div>
 
         </div>
 
         {/* Large KICKS Bottom Text */}
-        <div className="container-custom overflow-hidden">
-             <span className="text-[120px] md:text-[200px] lg:text-[280px] font-black uppercase italic leading-none text-white block w-full tracking-tighter">
+        <div className="container-custom px-0 mb-8 select-none">
+             <span className="text-[120px] md:text-[240px] lg:text-[400px] font-black uppercase italic leading-none text-white block w-full text-center tracking-tighter opacity-100">
                  KICKS
              </span>
         </div>
         
-        <div className="container-custom pt-4">
-             <p className="text-gray-500 text-xs">© All rights reserved</p>
+        <div className="container-custom pt-8 border-t border-white/10 flex justify-between items-center text-gray-500 text-sm">
+             <p>© All rights reserved</p>
+             <div className="flex gap-6">
+                <span>Terms of Service</span>
+                <span>Privacy Policy</span>
+             </div>
         </div>
       </div>
     </footer>
