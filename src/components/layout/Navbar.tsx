@@ -1,7 +1,8 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { Menu, Search, User, X } from "lucide-react";
+import { ChevronDown, Menu, Search, User, X } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -9,16 +10,30 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
-    { name: "New Drops 🔥", href: "/new-drops" },
-    { name: "Men", href: "/men" },
-    { name: "Women", href: "/women" },
+    { name: "New Drops 🔥", href: "/new-drops", hasDropdown: false },
+    { name: "Men", href: "/men", hasDropdown: true },
+    { name: "Women", href: "/women", hasDropdown: true },
   ];
 
   return (
-    <nav className="bg-background border-b border-gray-200/50 sticky top-0 z-50 backdrop-blur-md">
-      <div className="container-custom">
-        <div className="flex h-20 items-center justify-between">
+    <nav className="sticky top-0 z-50 pt-4 px-4 lg:pt-8 lg:px-8">
+      <div className="container-custom max-w-[1320px] mx-auto bg-white rounded-[24px] shadow-lg border border-gray-100">
+        <div className="flex h-16 lg:h-24 items-center px-4 lg:px-8">
           
+          {/* Left: Nav Links - Desktop */}
+          <div className="hidden lg:flex flex-1 items-center gap-8">
+            {navLinks.map((link) => (
+              <Link 
+                key={link.name} 
+                href={link.href}
+                className="text-foreground font-semibold text-sm hover:text-primary transition-colors flex items-center gap-1"
+              >
+                {link.name}
+                {link.hasDropdown && <ChevronDown size={14} />}
+              </Link>
+            ))}
+          </div>
+
           {/* Mobile Menu Toggle */}
           <button 
             className="lg:hidden p-2"
@@ -27,36 +42,32 @@ const Navbar = () => {
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
 
-          {/* Nav Links - Desktop */}
-          <div className="hidden lg:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <Link 
-                key={link.name} 
-                href={link.href}
-                className="text-foreground font-semibold text-sm hover:text-primary transition-colors"
-              >
-                {link.name}
-              </Link>
-            ))}
+          {/* Center: Logo */}
+          <div className="flex flex-1 lg:flex-none justify-center">
+            <Link href="/" className="flex-shrink-0">
+              <Image 
+                src="/header_logo.png" 
+                alt="Kicks Store" 
+                width={128} 
+                height={32} 
+                className="h-6 lg:h-8 w-auto"
+                priority
+              />
+            </Link>
           </div>
 
-          {/* Logo */}
-          <Link href="/" className="flex-shrink-0">
-            <h1 className="text-3xl font-black tracking-tighter uppercase italic">
-              Kicks
-            </h1>
-          </Link>
-
-          {/* Icons */}
-          <div className="flex items-center gap-4 lg:gap-6">
+          {/* Right: Icons */}
+          <div className="flex flex-1 items-center justify-end gap-2 lg:gap-6">
             <button className="p-2 hover:bg-gray-100 rounded-full transition-colors hidden sm:block">
               <Search size={20} />
             </button>
-            <button className="p-2 hover:bg-gray-100 rounded-full transition-colors">
+            <button className="p-2 hover:bg-gray-100 rounded-full transition-colors hidden sm:block">
               <User size={20} />
             </button>
-            <Link href="/cart" className="p-2 bg-accent text-white rounded-full flex items-center justify-center relative w-10 h-10">
-              <span className="text-xs font-bold leading-none">0</span>
+            <Link href="/cart" className="flex items-center justify-center">
+              <div className="w-8 h-8 lg:w-10 lg:h-10 bg-[#FFA52F] text-white rounded-full flex items-center justify-center text-xs font-bold transition-transform hover:scale-105">
+                0
+              </div>
             </Link>
           </div>
         </div>
@@ -69,17 +80,18 @@ const Navbar = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="lg:hidden absolute top-20 left-0 w-full bg-white border-b border-gray-100 shadow-xl"
+            className="lg:hidden absolute top-[100%] left-4 right-4 bg-white border border-gray-100 rounded-2xl shadow-2xl mt-2 overflow-hidden"
           >
             <div className="px-6 py-8 flex flex-col gap-6">
               {navLinks.map((link) => (
                 <Link 
                   key={link.name} 
                   href={link.href}
-                  className="text-xl font-bold"
+                  className="text-xl font-bold flex items-center justify-between"
                   onClick={() => setIsOpen(false)}
                 >
                   {link.name}
+                  {link.hasDropdown && <ChevronDown size={20} />}
                 </Link>
               ))}
             </div>

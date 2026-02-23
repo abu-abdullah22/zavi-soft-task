@@ -18,9 +18,27 @@ interface ProductCardProps {
 
 const ProductCard = ({ product }: ProductCardProps) => {
   // Use first image or placeholder
-  const imageUrl = product.images[0]?.startsWith('[') 
-    ? JSON.parse(product.images[0])[0] 
-    : product.images[0];
+  const imageUrl = (() => {
+    if (!product.images || product.images.length === 0) return "https://via.placeholder.com/400";
+    
+    let firstImage = product.images[0];
+    
+    // Handle cases where the API returns an array string like '["url"]' instead of a real array
+    if (typeof firstImage === 'string' && firstImage.startsWith('[')) {
+      try {
+        const parsed = JSON.parse(firstImage);
+        if (Array.isArray(parsed) && parsed.length > 0) {
+          firstImage = parsed[0];
+        }
+      } catch (e) {
+        // Fallback for malformed JSON strings like ["url1", "url2", "url3"]
+        firstImage = firstImage.replace(/[\[\]"]/g, '').split(',')[0].trim();
+      }
+    }
+    
+    // Some URLs might be relative or broken, ensure it's a string
+    return typeof firstImage === 'string' ? firstImage : "https://via.placeholder.com/400";
+  })();
 
   return (
     <motion.div 

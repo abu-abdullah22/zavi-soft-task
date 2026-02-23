@@ -22,6 +22,22 @@ const nextConfig: NextConfig = {
       {
           protocol: "https",
           hostname: "api.lorem.space"
+      },
+      {
+          protocol: "https",
+          hostname: "assets.adidas.com"
+      },
+      {
+          protocol: "https",
+          hostname: "static.nike.com"
+      },
+      {
+          protocol: "https",
+          hostname: "images.stockx.com"
+      },
+      {
+          protocol: "https",
+          hostname: "placehold.co"
       }
     ],
   },

@@ -29,7 +29,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased font-sans`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased font-sans bg-[#F6F6F6]`}
+        suppressHydrationWarning
       >
         <StoreProvider>
           <Navbar />
