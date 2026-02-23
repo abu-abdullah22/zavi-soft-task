@@ -106,8 +106,10 @@ const Footer = () => {
       </div>
       
       {/* Copyright outside footer container */}
-      <div className="w-full flex justify-center text-gray-500 text-sm mt-8">
-           <p>© All rights reserved</p>
+      <div className="w-full flex justify-center mt-8">
+           <p className="text-[#232321] font-open-sans text-base font-normal leading-none text-center">
+             © All rights reserved
+           </p>
       </div>
     </footer>
   );
