@@ -42,8 +42,8 @@ const Footer = () => {
       </div>
 
       {/* Main Footer Content */}
-      <div className="bg-[#232321] text-white pt-24 pb-8 px-8 lg:px-16 rounded-[40px] -mt-8 relative z-0">
-        <div className="container-custom grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-24">
+      <div className="bg-[#232321] text-white pt-24 pb-8 px-8 lg:px-16 rounded-[48px] max-w-[1320px] mx-auto h-auto lg:h-[591px] -mt-8 relative z-0">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-12">
           
           {/* About Us */}
           <div>
