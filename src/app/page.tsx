@@ -95,63 +95,65 @@ export default function Home() {
       </section>
 
       {/* Reviews Section */}
-      <section className="py-20">
+      <section className="py-20 bg-background">
         <div className="container-custom">
             <div className="flex justify-between items-center mb-12">
-                <h2 className="text-4xl lg:text-5xl font-bold uppercase text-foreground">Reviews</h2>
-                <Link href="#" className="bg-primary text-white w-[189px] h-[48px] rounded-[8px] font-bold uppercase hover:bg-blue-700 transition-all flex items-center justify-center gap-1 text-sm">
-                  See All <MoveRight size={16} />
+                <h2 className="text-[48px] lg:text-[74px] font-bold uppercase text-foreground leading-none">Reviews</h2>
+                <Link href="#" className="bg-primary text-white px-8 py-3 rounded-[8px] font-bold uppercase hover:bg-blue-700 transition-all text-sm tracking-tight">
+                  See All
                 </Link>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {/* Review Card 1 */}
-                <div className="bg-white rounded-2xl p-6">
-                    <div className="flex gap-1 mb-4">
-                        {[...Array(5)].map((_, i) => (
-                            <Star key={i} size={16} className="fill-accent text-accent" />
-                        ))}
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {[
+                  { id: 1, avatar: "/reviewer-1.png", img: "/review-image-1.png" },
+                  { id: 2, avatar: "/reviewer-2.png", img: "/review-image-2.png" },
+                  { id: 3, avatar: "/reviewer-3.png", img: "/review-image-3.png" }
+                ].map((review) => (
+                  <div key={review.id} className="flex flex-col rounded-[28px] overflow-hidden bg-white group border border-transparent shadow-sm">
+                    {/* Top Content */}
+                    <div className="p-8 pb-6 flex flex-col min-h-[180px]">
+                      <div className="flex justify-between items-start gap-4 mb-4">
+                        <div className="flex flex-col">
+                          <h4 className="text-2xl font-bold text-foreground mb-1 leading-tight tracking-tight">Good Quality</h4>
+                          <p className="text-gray-500 text-base leading-snug max-w-[200px]">
+                            I highly recommend shopping from kicks
+                          </p>
+                        </div>
+                        
+                        <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-white flex-shrink-0 shadow-sm">
+                          <Image 
+                            src={review.avatar} 
+                            alt="Reviewer" 
+                            width={64} 
+                            height={64} 
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                      </div>
+
+                      <div className="flex items-center gap-1 mt-auto">
+                        <div className="flex gap-0.5">
+                          {[...Array(5)].map((_, i) => (
+                            <Star key={i} size={18} className="fill-accent text-accent" />
+                          ))}
+                        </div>
+                        <span className="text-base font-bold text-foreground ml-1">5.0</span>
+                      </div>
                     </div>
-                    <h4 className="font-bold text-foreground mb-2">Good Quality</h4>
-                    <p className="text-sm text-gray-500 mb-6 leading-relaxed">
-                        I highly recommend shopping at Kicks store. The quality is amazing and the prices are very competitive.
-                    </p>
-                    <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold text-sm">JD</div>
-                        <span className="text-sm font-semibold text-foreground">John Doe</span>
+
+                    {/* Bottom Image */}
+                    <div className="relative aspect-[429/325] w-full">
+                      <Image 
+                        src={review.img} 
+                        alt="Review Image" 
+                        fill 
+                        className="object-cover group-hover:scale-105 transition-transform duration-700"
+                        priority={review.id === 1}
+                      />
                     </div>
-                </div>
-                {/* Review Card 2 */}
-                <div className="bg-white rounded-2xl p-6">
-                    <div className="flex gap-1 mb-4">
-                        {[...Array(5)].map((_, i) => (
-                            <Star key={i} size={16} className="fill-accent text-accent" />
-                        ))}
-                    </div>
-                    <h4 className="font-bold text-foreground mb-2">Good Quality</h4>
-                    <p className="text-sm text-gray-500 mb-6 leading-relaxed">
-                        I highly recommend shopping at Kicks store. Great selection and fast shipping. Will definitely come back!
-                    </p>
-                    <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center text-accent font-bold text-sm">JS</div>
-                        <span className="text-sm font-semibold text-foreground">Jane Smith</span>
-                    </div>
-                </div>
-                {/* Review Card 3 */}
-                <div className="bg-white rounded-2xl p-6">
-                    <div className="flex gap-1 mb-4">
-                        {[...Array(5)].map((_, i) => (
-                            <Star key={i} size={16} className="fill-accent text-accent" />
-                        ))}
-                    </div>
-                    <h4 className="font-bold text-foreground mb-2">Good Quality</h4>
-                    <p className="text-sm text-gray-500 mb-6 leading-relaxed">
-                        Amazing experience! The shoes fit perfectly and the customer service is top notch. Five stars!
-                    </p>
-                    <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-full bg-foreground/10 flex items-center justify-center text-foreground font-bold text-sm">MJ</div>
-                        <span className="text-sm font-semibold text-foreground">Mike Johnson</span>
-                    </div>
-                </div>
+                  </div>
+                ))}
             </div>
         </div>
       </section>
