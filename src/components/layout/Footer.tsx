@@ -4,19 +4,19 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="mt-12 pb-12">
+    <footer className="mt-12 pb-8 lg:pb-12">
       {/* Wrapper for the entire layout to handle absolute positioning of logo across sections */}
-      <div className="max-w-[1320px] mx-auto relative select-none">
+      <div className="max-w-[1320px] mx-auto px-4 lg:px-0 relative select-none">
         
         {/* Join Club Section (Upper Part) */}
-        <div className="bg-primary px-8 lg:px-16 rounded-t-[40px] rounded-b-none h-auto lg:h-[340px] flex items-center overflow-hidden relative z-10 text-white">
+        <div className="bg-primary px-5 sm:px-8 lg:px-16 py-10 lg:py-0 rounded-t-[28px] lg:rounded-t-[40px] rounded-b-none h-auto lg:h-[340px] flex items-center overflow-hidden relative z-10 text-white">
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8 w-full">
             {/* Left: Text + Form */}
             <div className="max-w-2xl flex-1">
-              <h2 className="text-3xl lg:text-5xl font-black leading-tight mb-4 uppercase">
+              <h2 className="text-2xl sm:text-3xl lg:text-5xl font-black leading-tight mb-3 lg:mb-4 uppercase">
                 Join our KicksPlus Club & get 15% off
               </h2>
-              <p className="text-white/80 text-lg mb-8">
+              <p className="text-white/80 text-sm sm:text-lg mb-5 lg:mb-8">
                 Sign up for free! Join the community.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
@@ -44,21 +44,21 @@ const Footer = () => {
         </div>
 
         {/* Main Footer Content (Lower Part) */}
-        <div className="bg-[#232321] text-white pt-24 pb-8 px-8 lg:px-16 rounded-b-[48px] rounded-t-none h-auto lg:h-[591px] relative z-0 overflow-hidden">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-12 relative z-10">
+        <div className="bg-[#232321] text-white pt-16 lg:pt-24 pb-8 px-5 sm:px-8 lg:px-16 rounded-b-[28px] lg:rounded-b-[48px] rounded-t-none h-auto lg:h-[591px] relative z-0 overflow-hidden">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-16 mb-12 relative z-10">
             
             {/* About Us */}
-            <div>
-              <h3 className="text-accent text-xl font-bold mb-8">About us</h3>
-              <p className="text-gray-400 leading-relaxed text-base">
+            <div className="col-span-2 lg:col-span-1">
+              <h3 className="text-accent text-base lg:text-xl font-bold mb-4 lg:mb-8">About us</h3>
+              <p className="text-gray-400 leading-relaxed text-sm lg:text-base">
                 We are the biggest hyperstore in the universe. We got you all cover with our exclusive collections and latest drops.
               </p>
             </div>
 
             {/* Categories */}
             <div>
-              <h3 className="text-accent text-xl font-bold mb-8">Categories</h3>
-              <ul className="space-y-4 text-base font-semibold">
+              <h3 className="text-accent text-base lg:text-xl font-bold mb-4 lg:mb-8">Categories</h3>
+              <ul className="space-y-3 lg:space-y-4 text-sm lg:text-base font-semibold">
                 <li><Link href="/runners" className="hover:text-accent transition-colors">Runners</Link></li>
                 <li><Link href="/sneakers" className="hover:text-accent transition-colors">Sneakers</Link></li>
                 <li><Link href="/basketball" className="hover:text-accent transition-colors">Basketball</Link></li>
@@ -70,8 +70,8 @@ const Footer = () => {
 
             {/* Company */}
             <div>
-              <h3 className="text-accent text-xl font-bold mb-8">Company</h3>
-              <ul className="space-y-4 text-base font-semibold">
+              <h3 className="text-accent text-base lg:text-xl font-bold mb-4 lg:mb-8">Company</h3>
+              <ul className="space-y-3 lg:space-y-4 text-sm lg:text-base font-semibold">
                 <li><Link href="/about" className="hover:text-accent transition-colors">About</Link></li>
                 <li><Link href="/contact" className="hover:text-accent transition-colors">Contact</Link></li>
                 <li><Link href="/blogs" className="hover:text-accent transition-colors">Blogs</Link></li>
@@ -80,7 +80,7 @@ const Footer = () => {
 
             {/* Follow Us */}
             <div>
-              <h3 className="text-accent text-xl font-bold mb-8">Follow us</h3>
+              <h3 className="text-accent text-base lg:text-xl font-bold mb-4 lg:mb-8">Follow us</h3>
               <div className="flex gap-4">
                 <Link href="#" className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-black hover:bg-accent transition-colors"><Facebook size={20} fill="currentColor" /></Link>
                 <Link href="#" className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-black hover:bg-accent transition-colors"><Instagram size={20} /></Link>
@@ -92,7 +92,7 @@ const Footer = () => {
 
           {/* Huge Logo positioned exactly at the bottom of the assembly */}
           {/* Note: top shifted slightly up from 383px to 340px per user request */}
-          <div className="absolute top-[340px] left-[29px] w-[1262px] h-[313.6px] pointer-events-none z-0">
+          <div className="hidden lg:block absolute top-[340px] left-[29px] w-[1262px] h-[313.6px] pointer-events-none z-0">
              <Image 
                 src="/Logo.png" 
                 alt="KICKS" 
